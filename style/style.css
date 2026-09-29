@@ -1161,7 +1161,7 @@ button {
   overflow-y: auto;
   overflow-x: hidden;
   box-sizing: border-box;
-  padding: 1.5rem 1.75rem 4.5rem;
+  padding: 1.5rem 1.75rem;
   background: radial-gradient(circle at top right, rgba(184, 255, 87, 0.02) 0%, transparent 60%), #0c0e13;
 }
 
