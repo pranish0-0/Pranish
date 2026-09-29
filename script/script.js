@@ -9,18 +9,18 @@ function updateTime() {
 
   // Time in 24-hr format
   const timeStr = now.toLocaleTimeString('en-US', {
-    hour:     '2-digit',
-    minute:   '2-digit',
-    second:   '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
     timeZone: 'Asia/Kathmandu',
-    hour12:   false,
+    hour12: false,
   });
 
   // Date format: "September 28, 2026"
   const dateStr = now.toLocaleDateString('en-US', {
-    month:    'long',
-    day:      'numeric',
-    year:     'numeric',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
     timeZone: 'Asia/Kathmandu',
   });
 
@@ -56,7 +56,7 @@ if (typewriterEl) {
   ];
 
   let phraseIdx = 0;
-  let charIdx   = 0;
+  let charIdx = 0;
   let isDeleting = false;
 
   function typeTick() {
@@ -124,7 +124,7 @@ if (cursorGlow && window.matchMedia('(hover: hover)').matches) {
 }
 
 // ── HERO TITLE INTERACTIVE SPOTLIGHT ILLUMINATION ──
-const heroTitleEl  = document.getElementById('hero-title');
+const heroTitleEl = document.getElementById('hero-title');
 const cursorGlowEl = document.getElementById('cursor-glow');
 
 if (heroTitleEl) {
@@ -167,8 +167,8 @@ if (heroTitleEl) {
 }
 
 // ── SCROLL EFFECT: HERO NAME MOVES & SHRINKS TO NAVBAR ──
-const siteHeader  = document.getElementById('site-header');
-const heroTitle   = document.getElementById('hero-title');
+const siteHeader = document.getElementById('site-header');
+const heroTitle = document.getElementById('hero-title');
 const navLogoText = document.getElementById('nav-logo-text');
 
 function handleScrollNameDock() {
@@ -182,7 +182,7 @@ function handleScrollNameDock() {
   if (heroTitle) {
     // Start transition when scrollY exceeds 90px, complete around 360px
     const startY = 90;
-    const endY   = 360;
+    const endY = 360;
 
     if (scrollY <= startY) {
       // Resting at original hero position
@@ -194,9 +194,9 @@ function handleScrollNameDock() {
       const progress = (scrollY - startY) / (endY - startY);
 
       // Hero title slowly moves upward, shifts toward top-left, and shrinks
-      const moveUp  = progress * 160;
+      const moveUp = progress * 160;
       const shiftLeft = progress * 40;
-      const scaleVal  = 1 - (progress * 0.65); // Scales down gradually
+      const scaleVal = 1 - (progress * 0.65); // Scales down gradually
 
       heroTitle.style.transform = `translate(${-shiftLeft}px, ${-moveUp}px) scale(${scaleVal})`;
 

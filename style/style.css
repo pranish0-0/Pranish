@@ -187,12 +187,6 @@ button {
   color: var(--accent);
 }
 
-.logo-dot {
-  color: var(--accent);
-  display: inline-block;
-  transition: transform 0.3s var(--ease-out);
-}
-
 .nav-logo-text {
   display: inline-block;
   opacity: 0;
@@ -254,7 +248,7 @@ button {
   border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 8px var(--accent);
-  animation: pulse 2.4s ease-in-out infinite;
+  animation: pulse 1.4s ease-in-out infinite;
   flex-shrink: 0;
 }
 
@@ -262,13 +256,16 @@ button {
 
   0%,
   100% {
-    opacity: 1;
-    box-shadow: 0 0 8px var(--accent);
+    /* opacity: 1; */
+    opacity: var(--title-glow-opacity, 1);
+    box-shadow: 0px 0px 15px var(--accent);
   }
 
   50% {
-    opacity: 0.55;
-    box-shadow: 0 0 3px var(--accent);
+    /* opacity: 0.55; */
+
+    opacity: var(--title-glow-opacity, .55);
+    box-shadow: 0 0 0px var(--accent);
   }
 }
 
@@ -277,7 +274,7 @@ button {
   font-size: var(--text-xs);
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--fg-muted);
+  color: var(--fg);
   white-space: nowrap;
   display: inline-block;
 }
@@ -324,8 +321,8 @@ button {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: clamp(2.5rem, 5vw, 5rem) 0 2rem;
+  justify-content: space-around;
+  padding: clamp(2rem, 4vw, 4.5rem) 0 2rem;
   position: relative;
 }
 
@@ -338,7 +335,7 @@ button {
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--fg-muted);
-  margin-bottom: clamp(1.5rem, 4vw, 3rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .eyebrow-line {
@@ -405,6 +402,7 @@ button {
   color: var(--fg-muted);
   font-weight: 400;
   line-height: 1.75;
+  min-height: 7vh;
 }
 
 /* Typewriter effect styles */
@@ -441,8 +439,8 @@ button {
   padding: 1.5rem;
   border-radius: 15%;
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
   background-size: 24px 24px, 24px 24px;
   background-position: center center;
 }
@@ -469,7 +467,7 @@ button {
   font-size: var(--text-xs);
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--fg-muted);
+  color: var(--fg);
   transition: color 0.2s;
 }
 
@@ -755,7 +753,6 @@ button {
   font-weight: 400;
   line-height: 1.7;
   max-width: 60ch;
-  width: 57ch;
   margin-bottom: 3.5rem;
 }
 
@@ -2040,7 +2037,8 @@ button {
   margin-bottom: 2rem;
 }
 
-.contact-cta-link:hover .contact-heading {
+.contact-cta-link,
+.contact-heading:hover {
   color: var(--accent);
 }
 
@@ -2325,6 +2323,10 @@ button {
 
   .contact-cta-link {
     margin-bottom: 2.5rem;
+  }
+
+  .hero-meta {
+    justify-content: center;
   }
 }
 
