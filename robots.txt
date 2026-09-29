@@ -1,0 +1,13 @@
+# robots.txt — Pranish Poudel Portfolio
+# https://pranishpoudel.com.np/
+
+User-agent: *
+Allow: /
+
+# Disallow internal documentation & draft notes
+Disallow: /project_details.txt
+Disallow: /details.txt
+Disallow: /Samples/
+
+# XML Sitemap
+Sitemap: https://pranishpoudel.com.np/sitemap.xml
